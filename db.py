@@ -1,14 +1,5 @@
 #! /usr/bin/python3
 
-
-def main():
-    # byte_offset = save_to_file('somedata')
-    db_set('somekey', 'some value')
-    val = db_get('somekey')
-    print(val)
-    # print(read_part(0))
-
-
 offset_memory = {}
 
 
@@ -56,7 +47,6 @@ def read_part(offset):
         length = int.from_bytes(f.read(8), byteorder='big')
         offset += 8
         f.seek(offset)
-        # key = f.read(length).decode('utf-8') # might not be needed
         offset += length
         f.seek(offset)
         length = int.from_bytes(f.read(8), byteorder='big')
@@ -71,7 +61,3 @@ def save_to_file(key, value):
         f.write((len(value)).to_bytes(8, byteorder='big'))
         f.write(bytes(value, 'utf-8'))
         return offset
-
-
-if __name__ == "__main__":
-    main()
