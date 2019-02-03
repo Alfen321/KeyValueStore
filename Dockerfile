@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
-RUN apt install -y python3-pip &&\
+RUN apt update && \
+    apt install -y python3-pip &&\
     apt clean && \
     mkdir /app
 
