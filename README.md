@@ -6,7 +6,7 @@ The project is written in python with a flask api facade.
 ## Features 
 
 - Key-value store database
-- Wrtie data to a database file
+- Write data to a database file
 - Read data from the database file
 - Offsets stored in momory for faster reading
 - Ability to generate the offsets if program is launched with an existing database
